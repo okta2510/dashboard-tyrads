@@ -1,5 +1,8 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import DashboardHeader from '@/components/organisms/DashboardHeader';
+import DashboardContentRight from '@/components/organisms/DashboardContentRight';
+import SideMenu from '@/components/organisms/SideMenu';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,7 +14,21 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className+' bg-[#F7F5FD]'}>
+        <div className="flex flex-1">
+          <SideMenu/>
+          <div className="w-full pl-[200px]">
+            <div className="flex">
+              <div className="w-full">
+                {children}
+              </div>
+              <div className="w-[380px] bg-white h-screen overflow-y-auto" >
+                <DashboardContentRight/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </body>
     </html>
   );
 }

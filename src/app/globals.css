@@ -15,7 +15,15 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
-
+.line-center-vs:after  {
+  content: '';
+  height: 50px;
+  border-left: solid 1px #ccc;
+  position: relative;
+  left:-50%;
+  z-index: 1;
+}
+/* 
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -30,4 +38,4 @@ body {
   .text-balance {
     text-wrap: balance;
   }
-}
+} */
