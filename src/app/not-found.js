@@ -1,8 +1,8 @@
-import Link from 'next/link'
- 
-export default function NotFound() {
+
+
+const NotFound = function (pageProps) {
   return (
-    <div>
+    <mainLayout>
 
 <div class="grid h-screen place-content-center bg-white px-4">
   <div class="text-center">
@@ -42,6 +42,8 @@ export default function NotFound() {
     <p class="mt-4 text-gray-500">We can't find that page.</p>
   </div>
 </div>
-    </div>
+    </mainLayout>
   )
 } 
+
+export default NotFound

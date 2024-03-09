@@ -10,7 +10,7 @@ const DashboardHeader = () => {
     
       <div>
       <img src="/crown.png" className='w-[100px]' alt="My Image" />
-        <h3 className='my-1 mt-2 font-bold'>Need More Feature?</h3>
+        <h3 className='my-1 mt-2 font-bold text-gray-700'>Need More Feature?</h3>
         <p className='text-gray-400 text-[14px] leading-[18px]'>Update your account to Premium to get more features</p>
       </div>
       <button  className='block w-full text-center text-[14px] text-white bg-[#5363EF] py-3 rounded-lg  mt-4'>

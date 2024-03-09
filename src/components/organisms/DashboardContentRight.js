@@ -1,7 +1,7 @@
 import Card from '@/components/molecules/card'
-import IncomeExpense from '@/components/molecules/IncomeExpense'
-import LatestSpending from '@/components/molecules/LatestSpending'
-import CtaMore from '@/components/molecules/CtaMore'
+import IncomeExpense from '@/components/organisms/IncomeExpense'
+import LatestSpending from '@/components/organisms/LatestSpending'
+import CtaMore from '@/components/organisms/CtaMore'
 const DashboardHeader = () => {
   return (
     <div className="p-[30px]">
