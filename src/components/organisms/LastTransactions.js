@@ -7,40 +7,40 @@ import { faArrowRight, faEllipsisVertical } from '@fortawesome/free-solid-svg-ic
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Dropdown from '@/components/molecules/Dropdown';
 
-const items = [
-  {
-    title: 'Online Store',
-    img: '/user1.png',
-    date: 1709980353,
-    ammount: '3000',
-    ammountPre: '-'
-  },
-  {
-    title: 'Pay the Hospital',
-    img: '/user2.png',
-    date: 1709721153,
-    ammount: '2000',
-    ammountPre: '+'
-  },
-  {
-    title: 'Tickets',
-    img: '/user3.png',
-    date: 1709548353,
-    ammount: '5000',
-    ammountPre: '+'
-  },
-  {
-    title: 'Tickets',
-    img: '/user4.png',
-    date: 1709289153,
-    ammount: '1000',
-    ammountPre: '-'
-  }
-];
+// const items = [
+//   {
+//     title: 'Online Store',
+//     img: '/user1.png',
+//     date: 1709980353,
+//     ammount: '3000',
+//     ammountPre: '-'
+//   },
+//   {
+//     title: 'Pay the Hospital',
+//     img: '/user2.png',
+//     date: 1709721153,
+//     ammount: '2000',
+//     ammountPre: '+'
+//   },
+//   {
+//     title: 'Tickets',
+//     img: '/user3.png',
+//     date: 1709548353,
+//     ammount: '5000',
+//     ammountPre: '+'
+//   },
+//   {
+//     title: 'Tickets',
+//     img: '/user4.png',
+//     date: 1709289153,
+//     ammount: '1000',
+//     ammountPre: '-'
+//   }
+// ];
 
 
-const LastTransaction = () => {
-  const [trasnsactions, setTrasnsactions] = useState([...items]);
+const LastTransaction = ({prop}) => {
+  const [trasnsactions, setTrasnsactions] = useState([...prop?.dataTransactions]);
   const [sort, setSort] = useState('dsc');
   const [showAll, setShowAll] = useState(false);
   
@@ -50,11 +50,12 @@ const LastTransaction = () => {
     return a.date - b.date;
   }
   
-  const sortList = (val) => {
-    setSort(val)
-    const sortedData = trasnsactions.sort(sortByTimestamp);
-    setTrasnsactions([...sortedData])
-    return
+  const sortList = async (val) => {
+    console.log(val, sort)
+    if(val === sort) return
+    await setSort(val);
+    const sortedData = trasnsactions.slice().sort(sortByTimestamp);
+    setTrasnsactions(sortedData);
   }
 
   let renderedStranscation = showAll ? trasnsactions : trasnsactions.slice(0,3)
@@ -72,7 +73,7 @@ const LastTransaction = () => {
     
     <div>
       {renderedStranscation.map((item, index) => (
-        <div key={index} className={`flex items-center w-full justify-between col-1 gap-[15px] py-3 hover:bg-slate-50 px-3 ${index === items.length - 1 ? '' : 'border-gray-200 border-b'}`}>
+        <div key={index} className={`flex items-center w-full justify-between col-1 gap-[15px] py-3 hover:bg-slate-50 px-3 ${index === renderedStranscation.length - 1 ? '' : 'border-gray-200 border-b'}`}>
           <div className='content-left flex items-center w-full justify-start col-span- gap-4'>
             <div className='w-[60px]'>
               <Image src={item.img} className='w-[80% rounded-full' alt="My Image" width={60} height={60} />

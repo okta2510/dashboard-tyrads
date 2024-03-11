@@ -4,12 +4,12 @@ const NotFound = function (pageProps) {
   return (
     <mainLayout>
 
-<div class="grid h-screen place-content-center bg-white px-4">
-  <div class="text-center">
+<div className="grid h-screen place-content-center bg-white px-4">
+  <div className="text-center">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 1024 768"
-      class="mx-auto h-56 w-auto text-black sm:h-64"
+      className="mx-auto h-56 w-auto text-black sm:h-64"
     >
       <g fill="none" fill-rule="evenodd">
         <g fill="#FF5678">
@@ -37,9 +37,9 @@ const NotFound = function (pageProps) {
       </g>
     </svg>
 
-    <h1 class="mt-6 text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">Uh-oh!</h1>
+    <h1 className="mt-6 text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">Uh-oh!</h1>
 
-    <p class="mt-4 text-gray-500">We can't find that page.</p>
+    <p className="mt-4 text-gray-500">We can't find that page.</p>
   </div>
 </div>
     </mainLayout>
